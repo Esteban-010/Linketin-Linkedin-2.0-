@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Linkedin 2.0</title>
+</head>
+<body>
+    <div id="elemento">
+        <h1>Linketin</h1>
+
+        <div v-if="mostrarLogin">
+            <h2>Iniciar Sesión</h2>
+            <input v-model="usuario.username" type="text" placeholder="username">
+            <input v-model="usuario.contrasenia" type="password" placeholder="password">
+            <button v-on:click="login">Ingresar</button>
+            <button v-on:click="mostrarR">Registrarse</button>
+        </div>
+        <div v-if="mostrarRegister">
+            <h2>Registrar</h2>
+            <input v-model="usuario.userName" type="text" placeholder="username">
+            <input v-model="usuario.nombres" type="text" placeholder="nombre">
+            <input v-model="usuario.apellidoPaterno" type="text" placeholder="apllidoPaterno">
+            <input v-model="usuario.apellidoMaterno" type="text" placeholder="apellido materno">
+            <input v-model="usuario.contrasenia" type="password" placeholder="password">
+            <button v-on:click="register">Registrar</button>
+            <button>Ingresar</button>
+        </div>
+
+        <div v-if="mostrarContent">
+            <h2>Bienvenido {{usuario.nombres}}</h2>
+        </div>
+
+
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
